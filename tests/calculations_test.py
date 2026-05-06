@@ -77,7 +77,7 @@ def test_area_of_circle_negative_radius_raises():
 
     # Act & Assert  
     with pytest.raises(ValueError, match="Radius cannot be negative"):  
-
+        area_of_circle(radius) 
 
 def test_get_nth_fibonacci_negative_raises():
     """Passing a negative n should raise ValueError."""  
