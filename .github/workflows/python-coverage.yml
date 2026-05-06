@@ -7,8 +7,8 @@ on:
   pull_request:
     branches: [ "main" ]
 
-  permissions:
-    pull-requests: write
+permissions:
+  pull-requests: write
 
 jobs:
   python-coverage:
@@ -29,8 +29,9 @@ jobs:
           pip install coverage==7.9
           pip install pytest-cov==6.2.1
 
-      - name: Run tests and generate coverage dpytest --cov=src
-          
+      - name: Run tests and generate coverage
+        run: pytest --cov=src
+
       - name: Coverage comment
         uses: py-cov-action/python-coverage-comment-action@v3
         with:
